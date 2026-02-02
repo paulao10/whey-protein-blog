@@ -1,0 +1,24 @@
+// public/images/whey-pots/placeholders/blend.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none">
+  <!-- Fundo branco -->
+  <rect width="200" height="300" fill="#ffffff"/>
+  
+  <!-- Formato do pote -->
+  <rect x="50" y="50" width="100" height="200" rx="10" ry="10" fill="#f0f0f0" stroke="#ccc" stroke-width="2"/>
+  <rect x="70" y="20" width="60" height="30" rx="5" ry="5" fill="#e0e0e0" stroke="#ccc" stroke-width="2"/>
+  
+  <!-- Rótulo -->
+  <rect x="60" y="80" width="80" height="120" rx="5" ry="5" fill="#8b5cf6" opacity="0.8"/>
+  
+  <!-- Texto no rótulo -->
+  <text x="100" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="white">BLEND</text>
+  <text x="100" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="white">WHEY</text>
+  <text x="100" y="160" text-anchor="middle" font-family="Arial" font-size="10" fill="white">PROTEIN</text>
+  <text x="100" y="180" text-anchor="middle" font-family="Arial" font-size="10" fill="white">2.27KG</text>
+  
+  <!-- Detalhes do pote -->
+  <circle cx="100" cy="60" r="8" fill="#d1d5db"/>
+  
+  <!-- Sombras para efeito 3D -->
+  <rect x="52" y="52" width="96" height="196" rx="8" ry="8" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+</svg>
