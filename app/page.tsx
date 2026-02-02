@@ -24,7 +24,7 @@ export default function HomePage() {
               Guia Completo de Suplementacao
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-balance">
-              Tudo sobre Whey Protein: Ciencia, Pratica e Resultados
+              Tudo sobre Whey Protein: Ciencia, Pratica e Resultados Reais
             </h1>
             <p className="text-background/80 text-lg mb-8 leading-relaxed max-w-2xl">
               O portal mais completo sobre proteina do soro do leite. Informacoes 
