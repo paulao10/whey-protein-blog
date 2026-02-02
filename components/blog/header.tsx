@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,13 +11,19 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-card border-b border-border">
+    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
-              <span className="text-primary-foreground font-bold text-lg">WP</span>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <Image
+                src="/images/logo.jpg"
+                alt="Whey Protein Brasil Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="hidden sm:block">
               <span className="font-bold text-foreground text-lg">Whey Protein</span>

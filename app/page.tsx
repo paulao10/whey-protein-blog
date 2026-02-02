@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/blog/sidebar";
 import { Button } from "@/components/ui/button";
 import { articles, getFeaturedArticles, categories } from "@/lib/articles";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function HomePage() {
@@ -105,8 +106,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Whey Types Section */}
       <section className="py-12 lg:py-16 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+              Conheca os Tipos de Whey Protein
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Cada tipo de Whey Protein tem caracteristicas unicas. Descubra qual e o ideal para voce.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: "Whey Concentrado", image: "/images/whey-pots/whey-concentrado.jpg", badge: "Popular", desc: "80% de proteina, otimo custo-beneficio", link: "/artigo/whey-concentrado-iniciantes" },
+              { name: "Whey Isolado", image: "/images/whey-pots/whey-isolado.jpg", badge: "Premium", desc: "90%+ de proteina, baixo em lactose", link: "/artigo/whey-isolado-vale-a-pena" },
+              { name: "Whey Hidrolisado", image: "/images/whey-pots/whey-hidrolisado.jpg", badge: "Pro", desc: "Absorcao ultra-rapida, pre-digerido", link: "/artigo/whey-hidrolisado-quando-usar" },
+              { name: "Whey 3W (Blend)", image: "/images/whey-pots/whey-blend.jpg", badge: "Versatil", desc: "Combinacao equilibrada de tipos", link: "/artigo/whey-protein-3w-o-que-e" },
+            ].map((type) => (
+              <Link
+                key={type.name}
+                href={type.link}
+                className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={type.image}
+                    alt={type.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded">
+                      {type.badge}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
+                    {type.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mt-1">{type.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
@@ -171,15 +220,20 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-primary/10 rounded-2xl p-8 lg:p-12">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-primary-foreground text-3xl font-bold">WP</span>
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
+            <div className="relative rounded-2xl overflow-hidden">
+              <Image
+                src="/images/hero-whey.jpg"
+                alt="Atleta tomando shake de proteina apos treino"
+                width={600}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
+                <h3 className="text-xl font-bold text-white mb-2">
                   Comece sua jornada
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-white/80 mb-6">
                   Leia nosso guia completo e entenda tudo sobre Whey Protein
                 </p>
                 <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">

@@ -1,30 +1,46 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface WheyPotImageProps {
   productName: string;
   imageUrl: string;
   altText: string;
+  description?: string;
+  badge?: string;
   className?: string;
 }
 
 export function WheyPotImage({ 
   productName, 
   imageUrl, 
-  altText, 
+  altText,
+  description,
+  badge,
   className = "" 
 }: WheyPotImageProps) {
   return (
-    <Card className={`overflow-hidden ${className}`}>
-      <CardHeader className="p-4">
-        <CardTitle className="text-lg">{productName}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-0 flex justify-center">
-        <div className="w-48 h-64 flex items-center justify-center p-4">
-          <img
+    <Card className={`overflow-hidden group hover:shadow-lg transition-all duration-300 border-border ${className}`}>
+      <CardContent className="p-0">
+        <div className="relative aspect-square bg-secondary/50 flex items-center justify-center overflow-hidden">
+          {badge && (
+            <Badge className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground">
+              {badge}
+            </Badge>
+          )}
+          <Image
             src={imageUrl}
             alt={altText}
-            className="max-w-full max-h-full object-contain"
+            width={300}
+            height={300}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
+        </div>
+        <div className="p-4">
+          <h3 className="font-bold text-foreground text-lg mb-1">{productName}</h3>
+          {description && (
+            <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -34,24 +50,32 @@ export function WheyPotImage({
 export function WheyPotGrid() {
   const wheyProducts = [
     {
-      name: "Whey Protein Concentrado",
-      image: "/images/whey-pots/placeholders/wpc.svg",
-      alt: "Pote de Whey Protein Concentrado"
+      name: "Whey Concentrado",
+      image: "/images/whey-pots/whey-concentrado.jpg",
+      alt: "Pote de Whey Protein Concentrado",
+      description: "80% de proteina, boa relacao custo-beneficio",
+      badge: "Popular"
     },
     {
-      name: "Whey Protein Isolado",
-      image: "/images/whey-pots/placeholders/wpi.svg",
-      alt: "Pote de Whey Protein Isolado"
+      name: "Whey Isolado",
+      image: "/images/whey-pots/whey-isolado.jpg",
+      alt: "Pote de Whey Protein Isolado",
+      description: "90%+ de proteina, baixo em lactose",
+      badge: "Premium"
     },
     {
-      name: "Whey Protein Hidrolisado",
-      image: "/images/whey-pots/placeholders/wph.svg",
-      alt: "Pote de Whey Protein Hidrolisado"
+      name: "Whey Hidrolisado",
+      image: "/images/whey-pots/whey-hidrolisado.jpg",
+      alt: "Pote de Whey Protein Hidrolisado",
+      description: "Absorcao ultra-rapida, pre-digerido",
+      badge: "Pro"
     },
     {
       name: "Blend de Whey",
-      image: "/images/whey-pots/placeholders/blend.svg",
-      alt: "Pote de Blend de Whey Protein"
+      image: "/images/whey-pots/whey-blend.jpg",
+      alt: "Pote de Blend de Whey Protein",
+      description: "Combinacao de varios tipos de whey",
+      badge: "Versatil"
     }
   ];
 
@@ -63,6 +87,8 @@ export function WheyPotGrid() {
           productName={product.name}
           imageUrl={product.image}
           altText={product.alt}
+          description={product.description}
+          badge={product.badge}
         />
       ))}
     </div>

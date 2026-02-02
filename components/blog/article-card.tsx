@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,12 +16,24 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
 
   if (featured) {
     return (
-      <Card className="overflow-hidden group hover:shadow-lg transition-shadow border-border">
+      <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300 border-border">
         <Link href={`/artigo/${article.slug}`}>
-          <div className="bg-primary/10 h-48 flex items-center justify-center">
-            <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
-              <span className="text-primary text-3xl font-bold">WP</span>
-            </div>
+          <div className="relative h-48 overflow-hidden bg-secondary">
+            {article.image ? (
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-3xl font-bold">WP</span>
+                </div>
+              </div>
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-3">
@@ -54,7 +67,7 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
   }
 
   return (
-    <Card className="overflow-hidden group hover:shadow-md transition-shadow border-border">
+    <Card className="overflow-hidden group hover:shadow-md transition-all duration-300 border-border">
       <Link href={`/artigo/${article.slug}`}>
         <CardContent className="p-5">
           <div className="flex items-center gap-2 mb-2">
