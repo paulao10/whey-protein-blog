@@ -1,6 +1,5 @@
 import React from "react"
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Article } from "@/lib/articles";
@@ -21,12 +20,10 @@ export function ArticleContent({ article, children }: ArticleContentProps) {
       {/* Cover Image */}
       {article.image && (
         <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-8">
-          <Image
+          <img
             src={article.image}
             alt={article.title}
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>

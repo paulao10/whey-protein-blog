@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,11 +19,10 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
         <Link href={`/artigo/${article.slug}`}>
           <div className="relative h-48 overflow-hidden bg-secondary">
             {article.image ? (
-              <Image
+              <img
                 src={article.image}
                 alt={article.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-primary/10">

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,11 +16,9 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src="/images/logo.jpg"
                 alt="Whey Protein Brasil Logo"
-                width={40}
-                height={40}
                 className="w-full h-full object-cover"
               />
             </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -28,11 +27,9 @@ export function WheyPotImage({
               {badge}
             </Badge>
           )}
-          <Image
+          <img
             src={imageUrl}
             alt={altText}
-            width={300}
-            height={300}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>

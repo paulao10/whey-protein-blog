@@ -5,7 +5,6 @@ import { Sidebar } from "@/components/blog/sidebar";
 import { Button } from "@/components/ui/button";
 import { articles, getFeaturedArticles, categories } from "@/lib/articles";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function HomePage() {
@@ -130,11 +129,10 @@ export default function HomePage() {
                 className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative aspect-square overflow-hidden">
-                  <Image
+                  <img
                     src={type.image}
                     alt={type.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded">
@@ -221,12 +219,10 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="relative rounded-2xl overflow-hidden">
-              <Image
+              <img
                 src="/images/hero-whey.jpg"
                 alt="Atleta tomando shake de proteina apos treino"
-                width={600}
-                height={500}
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
