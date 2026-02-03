@@ -1,3 +1,5 @@
+import { images } from "./images";
+
 export interface Article {
   slug: string;
   title: string;
@@ -37,7 +39,7 @@ export const articles: Article[] = [
     updatedAt: '2026-01-28',
     featured: true,
     relatedArticles: ['tipos-de-whey-protein', 'beneficios-whey-protein', 'como-tomar-whey-protein'],
-    image: '/images/articles/whey-scoop.jpg'
+    image: images.wheyScoop
   },
   {
     slug: 'tipos-de-whey-protein',
@@ -52,7 +54,7 @@ export const articles: Article[] = [
     updatedAt: '2026-01-27',
     featured: true,
     relatedArticles: ['whey-protein-guia-completo', 'whey-isolado-vale-a-pena', 'whey-concentrado-iniciantes'],
-    image: '/images/whey-pots/whey-isolado.jpg'
+    image: images.wheyIsolado
   },
   {
     slug: 'beneficios-whey-protein',
@@ -67,7 +69,7 @@ export const articles: Article[] = [
     updatedAt: '2026-01-26',
     featured: true,
     relatedArticles: ['whey-protein-guia-completo', 'whey-protein-emagrecimento', 'whey-protein-massa-muscular'],
-    image: '/images/articles/muscle-building.jpg'
+    image: images.muscleBuilding
   },
 
   // ARTIGOS SOBRE TIPOS (4)
@@ -83,7 +85,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-12',
     updatedAt: '2026-01-25',
     relatedArticles: ['tipos-de-whey-protein', 'whey-concentrado-iniciantes', 'whey-protein-intolerancia-lactose'],
-    image: '/images/whey-pots/whey-isolado.jpg'
+    image: images.wheyIsolado
   },
   {
     slug: 'whey-concentrado-iniciantes',
@@ -97,7 +99,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-11',
     updatedAt: '2026-01-24',
     relatedArticles: ['tipos-de-whey-protein', 'whey-protein-guia-completo', 'como-tomar-whey-protein'],
-    image: '/images/whey-pots/whey-concentrado.jpg'
+    image: images.wheyConcentrado
   },
   {
     slug: 'whey-hidrolisado-quando-usar',
@@ -111,7 +113,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-10',
     updatedAt: '2026-01-23',
     relatedArticles: ['tipos-de-whey-protein', 'whey-isolado-vale-a-pena', 'melhor-horario-tomar-whey'],
-    image: '/images/whey-pots/whey-hidrolisado.jpg'
+    image: images.wheyHidrolisado
   },
   {
     slug: 'whey-protein-3w-o-que-e',
@@ -125,7 +127,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-09',
     updatedAt: '2026-01-22',
     relatedArticles: ['tipos-de-whey-protein', 'whey-concentrado-iniciantes', 'whey-isolado-vale-a-pena'],
-    image: '/images/whey-pots/whey-blend.jpg'
+    image: images.wheyBlend
   },
 
   // ARTIGOS SOBRE USO E TIMING (4)
@@ -141,7 +143,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-08',
     updatedAt: '2026-01-21',
     relatedArticles: ['whey-protein-guia-completo', 'melhor-horario-tomar-whey', 'whey-com-agua-ou-leite'],
-    image: '/images/articles/protein-shake.jpg'
+    image: images.proteinShake
   },
   {
     slug: 'melhor-horario-tomar-whey',
@@ -155,7 +157,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-07',
     updatedAt: '2026-01-20',
     relatedArticles: ['como-tomar-whey-protein', 'whey-protein-guia-completo', 'whey-protein-massa-muscular'],
-    image: '/images/articles/whey-scoop.jpg'
+    image: images.wheyScoop
   },
   {
     slug: 'whey-com-agua-ou-leite',
@@ -197,7 +199,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-04',
     updatedAt: '2026-01-17',
     relatedArticles: ['whey-protein-emagrecimento', 'beneficios-whey-protein', 'como-tomar-whey-protein'],
-    image: '/images/articles/women-fitness.jpg'
+    image: images.womenFitness
   },
   {
     slug: 'whey-protein-idosos',
@@ -211,7 +213,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-03',
     updatedAt: '2026-01-16',
     relatedArticles: ['beneficios-whey-protein', 'whey-protein-guia-completo', 'quanto-whey-protein-por-dia'],
-    image: '/images/articles/senior-fitness.jpg'
+    image: images.seniorFitness
   },
   {
     slug: 'whey-protein-emagrecimento',
@@ -225,7 +227,7 @@ export const articles: Article[] = [
     publishedAt: '2026-01-02',
     updatedAt: '2026-01-15',
     relatedArticles: ['beneficios-whey-protein', 'whey-com-agua-ou-leite', 'whey-isolado-vale-a-pena'],
-    image: '/images/articles/weight-loss.jpg'
+    image: images.weightLoss
   },
   {
     slug: 'whey-protein-massa-muscular',

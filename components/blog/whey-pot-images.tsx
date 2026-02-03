@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { images } from "@/lib/images";
 
 interface WheyPotImageProps {
   productName: string;
@@ -48,28 +49,28 @@ export function WheyPotGrid() {
   const wheyProducts = [
     {
       name: "Whey Concentrado",
-      image: "/images/whey-pots/whey-concentrado.jpg",
+      image: images.wheyConcentrado,
       alt: "Pote de Whey Protein Concentrado",
       description: "80% de proteina, boa relacao custo-beneficio",
       badge: "Popular"
     },
     {
       name: "Whey Isolado",
-      image: "/images/whey-pots/whey-isolado.jpg",
+      image: images.wheyIsolado,
       alt: "Pote de Whey Protein Isolado",
       description: "90%+ de proteina, baixo em lactose",
       badge: "Premium"
     },
     {
       name: "Whey Hidrolisado",
-      image: "/images/whey-pots/whey-hidrolisado.jpg",
+      image: images.wheyHidrolisado,
       alt: "Pote de Whey Protein Hidrolisado",
       description: "Absorcao ultra-rapida, pre-digerido",
       badge: "Pro"
     },
     {
       name: "Blend de Whey",
-      image: "/images/whey-pots/whey-blend.jpg",
+      image: images.wheyBlend,
       alt: "Pote de Blend de Whey Protein",
       description: "Combinacao de varios tipos de whey",
       badge: "Versatil"

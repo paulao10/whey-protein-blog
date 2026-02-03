@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/lib/articles";
+import { images } from "@/lib/images";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg overflow-hidden">
               <img
-                src="/images/logo.jpg"
+                src={images.logo}
                 alt="Whey Protein Brasil Logo"
                 className="w-full h-full object-cover"
               />

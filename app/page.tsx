@@ -4,6 +4,7 @@ import { ArticleCard } from "@/components/blog/article-card";
 import { Sidebar } from "@/components/blog/sidebar";
 import { Button } from "@/components/ui/button";
 import { articles, getFeaturedArticles, categories } from "@/lib/articles";
+import { images } from "@/lib/images";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
@@ -118,10 +119,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Whey Concentrado", image: "/images/whey-pots/whey-concentrado.jpg", badge: "Popular", desc: "80% de proteina, otimo custo-beneficio", link: "/artigo/whey-concentrado-iniciantes" },
-              { name: "Whey Isolado", image: "/images/whey-pots/whey-isolado.jpg", badge: "Premium", desc: "90%+ de proteina, baixo em lactose", link: "/artigo/whey-isolado-vale-a-pena" },
-              { name: "Whey Hidrolisado", image: "/images/whey-pots/whey-hidrolisado.jpg", badge: "Pro", desc: "Absorcao ultra-rapida, pre-digerido", link: "/artigo/whey-hidrolisado-quando-usar" },
-              { name: "Whey 3W (Blend)", image: "/images/whey-pots/whey-blend.jpg", badge: "Versatil", desc: "Combinacao equilibrada de tipos", link: "/artigo/whey-protein-3w-o-que-e" },
+              { name: "Whey Concentrado", image: images.wheyConcentrado, badge: "Popular", desc: "80% de proteina, otimo custo-beneficio", link: "/artigo/whey-concentrado-iniciantes" },
+              { name: "Whey Isolado", image: images.wheyIsolado, badge: "Premium", desc: "90%+ de proteina, baixo em lactose", link: "/artigo/whey-isolado-vale-a-pena" },
+              { name: "Whey Hidrolisado", image: images.wheyHidrolisado, badge: "Pro", desc: "Absorcao ultra-rapida, pre-digerido", link: "/artigo/whey-hidrolisado-quando-usar" },
+              { name: "Whey 3W (Blend)", image: images.wheyBlend, badge: "Versatil", desc: "Combinacao equilibrada de tipos", link: "/artigo/whey-protein-3w-o-que-e" },
             ].map((type) => (
               <Link
                 key={type.name}
@@ -220,7 +221,7 @@ export default function HomePage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/images/hero-whey.jpg"
+                src={images.heroWhey}
                 alt="Atleta tomando shake de proteina apos treino"
                 className="w-full h-auto object-cover"
               />
